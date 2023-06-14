@@ -39,20 +39,23 @@ char top(struct stack *s){
 int main(int argc, char const *argv[])
 {
     printf("Start stack\n");
-    struct stack *s;
-    initialize(s);
+    struct stack s;
+    initialize(&s);
 
-    push(s, 't');
-    push(s, 's');
-    push(s, 'e');
-    push(s, 't');
+    push(&s, 't');
 
-    printf("%c \n",top(s));
-    pop(s);
-    printf("%c \n",top(s));
-    pop(s);
-    printf("%c \n",top(s));
-    pop(s);
-    printf("%c \n",top(s));
+
+    printf("%c \n",top(&s));
+    push(&s, 's');
+    push(&s, 'e');
+    push(&s, 't');
+    printf("%c \n",top(&s));
+
+    pop(&s);
+    printf("%c \n",top(&s));
+    pop(&s);
+    printf("%c \n",top(&s));
+    pop(&s);
+    printf("%c \n",top(&s));
     return 0;
 }
